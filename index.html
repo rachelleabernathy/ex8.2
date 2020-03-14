@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Exercise 8.1</h1>
+
+    <div v-cloak id="calculator">
+        <form id="wrapper">
+            <div>
+                <input v-model.number="firstNumber" type="number" placeholder="first number">
+                <select>
+                    <option value="add">+</option>
+                    <option value="subtract">-</option>
+                    <option value="multiply">&times;</option>
+                    <option value="divide">&divide;</option>
+                </select>
+                <input v-model.number="secondNumber" type="number" placeholder="second number">
+            </div>
+            <button v-on:click="calculate(firstNumber, secondNumber)" type="button">Calculate</button>
+            <div id="output">
+                Operation: {{operation}}<br>
+                Total: <strong>{{total}}</strong>
+            </div>
+        </form>
+    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="main.js"></script>
+
+</body>
+</html>
